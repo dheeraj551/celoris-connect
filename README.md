@@ -27,29 +27,28 @@ A sophisticated, dual-role web application designed to serve as the central mana
 - **Styling**: Tailwind CSS + Heroicons + Lucide React
 - **Backend**: Appwrite (Authentication, Database, Storage)
 - **AI**: Google Gemini API for Admin AI Assistant
-- **Deployment**: Coolify with Nixpacks
-- **Web Server**: Nginx
+- **Deployment**: Appwrite Sites
+- **Build System**: Vite with optimized bundling
 
 ## 📋 Prerequisites
 
-- Node.js 18+ 
-- Appwrite server (self-hosted on Coolify)
+- Appwrite server running with Sites feature enabled
 - Google Gemini API key
-- Coolify deployment environment
+- Node.js 18+ for local development
 
 ## ⚙️ Appwrite Configuration
 
-### 1. Create Appwrite Project
-1. Set up Appwrite on your Coolify instance
-2. Create a new project called "Celoris Connect"
-3. Note down your project settings
+### 1. Verify Your Appwrite Project
+Your project is already configured:
+- **Project ID**: `69172e650018b6ea783d`
+- **Endpoint**: `https://appwrite.celoris.in/v1`
+- **Platform**: React (configured)
 
-### 2. Configure Platform
-1. Go to **Settings** → **API Keys**
-2. Generate a new API key with all permissions
-3. Go to **Settings** → **Platforms** → **Add Platform**
-4. Select **Web** → **React**
-5. Configure as:
+### 2. Configure Platform (if needed)
+If you need to update platform settings:
+1. Go to **Settings** → **Platforms** → **Add Platform**
+2. Select **Web** → **React**
+3. Configure as:
    - **Name**: `Celoris Connect React`
    - **Host**: `localhost` (for development)
    - **Redirect URLs**: 
@@ -206,34 +205,61 @@ npm run dev
 
 Visit `http://localhost:5173`
 
-## 🚢 Deployment on Coolify
+## 🚢 Deployment on Appwrite Sites
 
-### 1. Prepare Repository
-1. Commit and push your code to GitHub
-2. Ensure your repository is public
+### 1. Deploy to GitHub
+1. Create a new repository on GitHub named `celoris-connect`
+2. Push your code to GitHub:
 
-### 2. Deploy on Coolify
-1. **Create New Project** in Coolify dashboard
-2. **Source Control** → **New Source**
+```bash
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/celoris-connect.git
+git push -u origin main
+```
+
+### 2. Deploy via Appwrite Sites
+
+#### Option A: GitHub Integration
+1. Go to **Sites** in your Appwrite console
+2. Click **"Create Site"** → **"GitHub"**
 3. Connect your GitHub repository
-4. **Platform**: Select **React**
-5. **Build Mode**: **Nixpacks**
-6. **Build Path**: `/` (root)
-7. **Environment Variables**:
-   ```
-   VITE_APPWRITE_PROJECT_ID=your_project_id
-   VITE_APPWRITE_PUBLIC_ENDPOINT=https://your-appwrite-domain.com/v1
-   VITE_GEMINI_API_KEY=your_gemini_api_key
-   ```
+4. Configure:
+   - **Repository**: `YOUR_USERNAME/celoris-connect`
+   - **Branch**: `main`
+   - **Build Command**: `npm run deploy:build`
+   - **Output Directory**: `dist`
+   - **Install Command**: `npm install`
 
-### 3. Configure Domain (Optional)
-1. Go to **Domains** in your project settings
-2. Add your custom domain
-3. Coolify will automatically provision SSL certificate
+#### Option B: Manual Upload
+1. Run build locally: `npm run build`
+2. Create ZIP of the `dist` folder
+3. Go to **Sites** → **Create Site** → **Manual Upload**
+4. Upload your ZIP file
 
-### 4. Update Appwrite Platform Settings
-Add your deployment domain to Appwrite platform configuration:
-- **Redirect URL**: `https://your-domain.com/auth/callback`
+### 3. Configure Environment Variables
+In your Appwrite Sites settings, add environment variables:
+```
+VITE_APPWRITE_PROJECT_ID=69172e650018b6ea783d
+VITE_APPWRITE_PUBLIC_ENDPOINT=https://appwrite.celoris.in/v1
+VITE_GEMINI_API_KEY=your_gemini_api_key_here
+```
+
+### 4. Get Google Gemini API Key
+1. Visit [Google AI Studio](https://aistudio.google.com)
+2. Sign in with your Google account
+3. Go to **API Keys** → **Create API Key**
+4. Copy the key to your environment variables
+
+### 5. Configure Domain
+1. In Sites settings, go to **Domains**
+2. Add your custom domain (e.g., `app.celoris.in`)
+3. Update DNS records to point to Appwrite
+4. SSL certificate will be automatically provisioned
+
+### 6. Update Appwrite Platform Settings
+Add your deployment domain to your React platform:
+- **Production Host**: `https://app.celoris.in`
+- **Redirect URL**: `https://app.celoris.in/auth/callback`
 
 ## 👥 User Roles & Access
 

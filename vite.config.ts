@@ -14,15 +14,21 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: false,
     minify: 'esbuild',
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
           appwrite: ['appwrite'],
-          ui: ['@heroicons/react', 'lucide-react'],
+          ui: ['@heroicons/react', 'lucide-react', '@heroicons/react/24/outline'],
+          charts: ['recharts'],
         },
       },
     },
+  },
+  server: {
+    port: 5173,
+    host: true,
   },
   define: {
     global: 'globalThis',
