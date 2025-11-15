@@ -1,7 +1,16 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
-import { account } from '@/lib/appwrite'
-import type { User } from 'appwrite'
+import { account } from '@/lib/appwrite.fallback'
+// Note: Using fallback until Supabase migration is complete
+// type User = { id: string, email: string, name: string, role: string }
 import toast from 'react-hot-toast'
+
+interface User {
+  id: string
+  email: string
+  name?: string
+  role?: string
+  prefs?: any
+}
 
 interface AuthContextType {
   user: User | null
