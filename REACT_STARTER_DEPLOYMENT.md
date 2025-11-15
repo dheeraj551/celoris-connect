@@ -20,7 +20,7 @@ This guide explains how to deploy Celoris Connect using the **React starter temp
 Before deployment, ensure your Appwrite database has these collections:
 
 ### Create Collections in Appwrite Console
-Go to your Appwrite console at `https://appwrite.celoris.in`:
+Go to your Appwrite Cloud console at `https://cloud.appwrite.io/console`:
 
 #### **Users Collection**
 ```
@@ -135,9 +135,9 @@ Attributes:
 After upload, add environment variables in Appwrite Sites:
 
 ```env
-VITE_APPWRITE_PROJECT_ID=69172e650018b6ea783d
-VITE_APPWRITE_PUBLIC_ENDPOINT=https://appwrite.celoris.in/v1
-VITE_GEMINI_API_KEY=your_gemini_api_key_here
+VITE_APPWRITE_PROJECT_ID=69187b27003478efc99e
+VITE_APPWRITE_PUBLIC_ENDPOINT=https://sgp.cloud.appwrite.io/v1
+VITE_GEMINI_API_KEY=AIzaSyCZaYLY8cRazRkM_nTOaYtQiu9wNQWPrUU
 NODE_ENV=production
 ```
 
@@ -242,8 +242,8 @@ npm run build
 ### Environment Variables
 ```bash
 # Verify all env vars are set:
-VITE_APPWRITE_PROJECT_ID=69172e650018b6ea783d
-VITE_APPWRITE_PUBLIC_ENDPOINT=https://appwrite.celoris.in/v1
+VITE_APPWRITE_PROJECT_ID=69187b27003478efc99e
+VITE_APPWRITE_PUBLIC_ENDPOINT=https://sgp.cloud.appwrite.io/v1
 VITE_GEMINI_API_KEY=your_key_here
 ```
 

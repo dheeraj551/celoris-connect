@@ -32,17 +32,18 @@ A sophisticated, dual-role web application designed to serve as the central mana
 
 ## 📋 Prerequisites
 
-- Appwrite server running with Sites feature enabled
-- Google Gemini API key
+- Appwrite Cloud account with Sites feature enabled
+- Google Gemini API key (already provided)
 - Node.js 18+ for local development
 
 ## ⚙️ Appwrite Configuration
 
-### 1. Verify Your Appwrite Project
-Your project is already configured:
-- **Project ID**: `69172e650018b6ea783d`
-- **Endpoint**: `https://appwrite.celoris.in/v1`
+### 1. Verify Your Appwrite Cloud Project
+Your project is configured on Appwrite Cloud:
+- **Project ID**: `69187b27003478efc99e`
+- **Endpoint**: `https://sgp.cloud.appwrite.io/v1`
 - **Platform**: React (configured)
+- **Region**: Singapore (sgp)
 
 ### 2. Configure Platform (if needed)
 If you need to update platform settings:
@@ -187,16 +188,10 @@ cp .env.example .env
 
 Update `.env` with your credentials:
 ```env
-VITE_APPWRITE_PROJECT_ID=your_project_id
-VITE_APPWRITE_PUBLIC_ENDPOINT=https://your-appwrite-domain.com/v1
-VITE_GEMINI_API_KEY=your_gemini_api_key
+VITE_APPWRITE_PROJECT_ID=69187b27003478efc99e
+VITE_APPWRITE_PUBLIC_ENDPOINT=https://sgp.cloud.appwrite.io/v1
+VITE_GEMINI_API_KEY=AIzaSyCZaYLY8cRazRkM_nTOaYtQiu9wNQWPrUU
 ```
-
-### 3. Get Google Gemini API Key
-1. Visit [Google AI Studio](https://aistudio.google.com)
-2. Sign in with your Google account
-3. Go to **API Keys** → **Create API Key**
-4. Copy the key to your `.env` file
 
 ### 4. Start Development Server
 ```bash

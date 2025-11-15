@@ -11,7 +11,7 @@ import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 
-console.log('🚀 Building Celoris Connect for Appwrite Sites...\n');
+console.log('🚀 Building Celoris Connect for Appwrite Cloud Sites...\n');
 
 // Clean previous builds
 if (fs.existsSync('dist')) {
@@ -52,7 +52,7 @@ console.log('   2. Upload the contents of the "dist" folder');
 console.log('   3. Add environment variables');
 console.log('   4. Configure your domain');
 console.log('\n📋 Required environment variables:');
-console.log('   VITE_APPWRITE_PROJECT_ID=69172e650018b6ea783d');
-console.log('   VITE_APPWRITE_PUBLIC_ENDPOINT=https://appwrite.celoris.in/v1');
-console.log('   VITE_GEMINI_API_KEY=your_gemini_api_key_here');
+console.log('   VITE_APPWRITE_PROJECT_ID=69187b27003478efc99e');
+console.log('   VITE_APPWRITE_PUBLIC_ENDPOINT=https://sgp.cloud.appwrite.io/v1');
+console.log('   VITE_GEMINI_API_KEY=AIzaSyCZaYLY8cRazRkM_nTOaYtQiu9wNQWPrUU');
 console.log('\n📚 See REACT_STARTER_DEPLOYMENT.md for detailed instructions\n');
