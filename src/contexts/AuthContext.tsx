@@ -83,8 +83,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       // Set user role in preferences
       await account.updatePrefs({ role, name })
       
-      // Send email verification
-      await account.createVerification('https://appwrite.celoris.in/auth/callback')
+      // Send email verification  
+      await account.createVerification(`${window.location.origin}/auth/callback`)
       
       toast.success('Registration successful! Please check your email to verify your account.')
     } catch (error: any) {
