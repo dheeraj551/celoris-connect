@@ -27,7 +27,7 @@ A sophisticated, dual-role web application designed to serve as the central mana
 - **Styling**: Tailwind CSS + Heroicons + Lucide React
 - **Backend**: Appwrite (Authentication, Database, Storage)
 - **AI**: Google Gemini API for Admin AI Assistant
-- **Deployment**: Appwrite Sites
+- **Deployment**: Appwrite Sites (React starter template)
 - **Build System**: Vite with optimized bundling
 
 ## 📋 Prerequisites
@@ -207,7 +207,18 @@ Visit `http://localhost:5173`
 
 ## 🚢 Deployment on Appwrite Sites
 
-### 1. Deploy to GitHub
+### Quick Deployment Guide
+**Recommended**: Use the **React starter template** in Appwrite Sites for fastest deployment.
+
+1. **Build for deployment**: `npm run build` or `node build-for-appwrite.js`
+2. **Upload to Appwrite Sites**: Use React starter template
+3. **Add environment variables**: See environment variables below
+4. **Configure domain**: Set up your custom domain
+
+📖 **Detailed instructions**: See [`REACT_STARTER_DEPLOYMENT.md`](./REACT_STARTER_DEPLOYMENT.md)
+
+### Alternative: GitHub Integration
+If you prefer GitHub-based deployment:
 1. Create a new repository on GitHub named `celoris-connect`
 2. Push your code to GitHub:
 
